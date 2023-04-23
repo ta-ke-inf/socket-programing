@@ -34,10 +34,11 @@ func handleClient(conn *net.TCPConn) {
 	count, err := conn.Read(buf)
 	CheckError(err)
 
-	log.Println("Received data from ", conn.RemoteAddr().String(), ":", buf[:count])
+	log.Println("Received data from ", conn.RemoteAddr().String(), ":", string(buf[:count]))
 
 	//書き込み
-	_, err = conn.Write(buf[:count])
+	message := "Hello Client:" + conn.RemoteAddr().String()
+	_, err = conn.Write([]byte(message))
 	CheckError(err)
 
 	log.Println("Writed data to ", conn.RemoteAddr().String())
