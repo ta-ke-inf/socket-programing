@@ -30,13 +30,12 @@ func main() {
 	message := "Hello Server:" + port
 	_, err = conn.Write([]byte(message))
 	CheckError(err)
-
 	log.Println("Writed data to ", conn.RemoteAddr().String())
 
+	//サーバーからのデータを読み込み
 	buf := make([]byte, 1024)
 	count, err := conn.Read(buf)
 	CheckError(err)
-
 	log.Println("Received from ", conn.RemoteAddr().String(), ":", string(buf[:count]))
 
 }
