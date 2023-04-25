@@ -10,6 +10,8 @@ on:
     branches: [ "main" ]
 
 jobs:
+  steps:
+    - run: ls -a
 
   build:
     runs-on: ubuntu-latest
@@ -20,9 +22,6 @@ jobs:
       uses: actions/setup-go@v3
       with:
         go-version: 1.19
-
-    - name: Ls
-    - run: ls -a
 
     - name: Build
       run: go build -v ./...
