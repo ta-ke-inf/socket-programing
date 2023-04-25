@@ -22,3 +22,5 @@ jobs:
 
     - name: Display Go version
       run: go version
+    - name: Current Dir
+      run: ls
