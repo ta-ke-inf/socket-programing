@@ -30,7 +30,6 @@ func handleClient(conn *net.UDPConn) {
 		return
 	}
 	log.Println("Received data from", addr.IP, addr.Port, ":", string(buf[:count]))
-
 	message := "Hello Client !!"
 	send_msg := []byte(message)
 	_, err = conn.WriteToUDP(send_msg, addr)
@@ -42,7 +41,6 @@ func handleClient(conn *net.UDPConn) {
 }
 
 func CheckError(err error) {
-
 	if err != nil {
 		log.Println("Error:", err)
 	}
