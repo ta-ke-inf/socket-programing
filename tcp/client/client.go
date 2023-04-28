@@ -23,7 +23,7 @@ func main() {
 	message := "Hello Server:" + port
 	_, err = conn.Write([]byte(message))
 	CheckError(err)
-	log.Println("Writed data to ", conn.RemoteAddr().String())
+	log.Println("Writed data to", conn.RemoteAddr().String())
 
 	buf := make([]byte, 1024)
 	count, err := conn.Read(buf)
