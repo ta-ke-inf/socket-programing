@@ -26,5 +26,5 @@ jobs:
     - name: Current Dir
       run: ls
     
-    - name: Go Lint
+    - name: golangci-lint
       uses: golangci/golangci-lint-action@v3
