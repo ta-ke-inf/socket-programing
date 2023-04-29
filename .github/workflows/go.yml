@@ -27,4 +27,4 @@ jobs:
       run: ls
     
     - name: Go Lint
-      run: golangci/golangci-lint-action@v3
+      uses: golangci/golangci-lint-action@v3
