@@ -10,7 +10,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  golang-ci:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -22,5 +22,9 @@ jobs:
 
     - name: Display Go version
       run: go version
+
     - name: Current Dir
       run: ls
+    
+    - name: Go Lint
+      run: golangci/golangci-lint-action@v3
